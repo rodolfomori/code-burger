@@ -1,8 +1,9 @@
 import Sequelize from 'sequelize'
 import Product from '../app/models/Product'
+import User from '../app/models/User'
+
 import mongoose from 'mongoose'
 
-import User from '../app/models/User'
 import databaseConfig from '../config/database'
 
 const models = [User, Product]

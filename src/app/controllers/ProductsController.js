@@ -1,7 +1,19 @@
 import Product from '../models/Product'
+import * as Yup from 'yup'
 
 class ProductsController {
   async store (request, response) {
+    const schema = Yup.object().shape({
+      name: Yup.string().required(),
+      price: Yup.number()
+        .required(),
+      category: Yup.string()
+        .required()
+    })
+
+    if (!(await schema.isValid(request.body))) {
+      return response.status(400).json({ error: 'Make sure your data is correct' })
+    }
     console.log(request)
 
     const { filename: path } = request.file

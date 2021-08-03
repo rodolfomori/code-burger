@@ -32,7 +32,6 @@ class SessionController {
 
     const { id, name, admin } = user
 
-    console.log(user)
     return res.json({
       user: {
         id,

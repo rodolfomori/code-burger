@@ -35,7 +35,11 @@ const OrderShema = new mongoose.Schema(
           required: true
         }
       }
-    ]
+    ],
+    status: {
+      type: String,
+      required: true
+    }
   },
   {
     timestamps: true

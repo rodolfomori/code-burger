@@ -24,14 +24,13 @@ class OrderController {
         .json({ error: 'Make sure your data is correct' })
     }
 
-    const { name } = await User.findOne({
-      where: { id: request.userId }
+    User.findOne({
+      where: { id: '32' }
     })
 
     const order = {
       user: {
-        id: request.userId,
-        name
+        id: request.userId
       },
       products: request.products
     }
